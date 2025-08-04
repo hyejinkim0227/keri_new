@@ -45,10 +45,10 @@
   //max-width: 1300px;
   margin-right: auto;
   margin-left: auto;
-  @include maxWidth($m720) {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+  // @include maxWidth($m720) {
+  //   padding-right: 15px;
+  //   padding-left: 15px;
+  // }
 }
 .main {
   .container {
@@ -313,6 +313,10 @@
             background: url(../images/common/icon_lnb_arrow.png) no-repeat right
               19px center/11px auto;
           }
+          // 하위 메뉴가 없는 메뉴 항목의 배경 제거
+          &:not(:has(ol)) > a {
+            background: none;
+          }
           // 메뉴 항목 전체(서브메뉴 포함)에 hover했을 때 부모 메뉴에 호버 효과 적용
           &:hover > a {
             box-shadow: 0 0 20px 0 rgba(164, 103, 62, 0.31);
@@ -320,6 +324,10 @@
             background: url(../images/common/icon_lnb_hover.png) no-repeat right
                 19px center / 14px auto,
               linear-gradient(to right, #ff7316, #ff8839);
+          }
+          // 하위 메뉴가 없는 메뉴 항목의 hover 배경도 제거
+          &:not(:has(ol)):hover > a {
+            background: linear-gradient(to right, #ff7316, #ff8839);
           }
           &.col2 {
             width: 432px;
@@ -401,7 +409,6 @@
       height: 85px;
       line-height: 85px;
       vertical-align: middle;
-
       padding-left: 30px;
       background: url(../images/common/icon_popup_zone.png) no-repeat left center/20px;
       color: #fff;
@@ -409,107 +416,106 @@
       font-weight: 300;
       letter-spacing: -0.33px;
       font-size: $fs-13;
-      margin:0 25px;
+      margin:0 20px;
+
       @include maxWidth(1470px){
-  
          em{display: none;}
-        
        }
     }
-    .search_box {
-      height: 85px;
-      line-height: 85px;
-      vertical-align: middle;
-      display: none;
-      position: absolute;
-      left: 0;
-      top: $header-height;
-      width: 100%;
-      border-top: 1px solid #ddd;
-      background-color: #fff;
-      z-index: 2;
-      padding: 60px 30px;
-      text-align: center;
-      &.active {
-        display: block;
-      }
-      .tit {
-        color: rgba(0, 0, 0, 0.3);
-        font-size: 36px;
-        font-weight: 600;
-        margin-right: 45px;
-        vertical-align: top;
-        display: inline-block;
-        line-height: 30px;
-      }
-      .search {
-        max-width: 680px;
-        border-bottom: 2px solid #000;
-        padding-bottom: 12px;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        vertical-align: top;
-        input {
-          display: block;
-          line-height: 30px;
-          font-size: 20px;
-          font-weight: 500;
-          color: #000;
-          border: 0;
-          height: 30px;
-        }
-        input::placeholder {
-          color: #000;
-        }
-        button {
-          position: absolute;
-          width: 30px;
-          height: 30px;
-          right: 0;
-          top: 0;
-          background: url(../images/common/btn_head_sch.png) no-repeat center;
-        }
-      }
+    // .search_box {
+    //   height: 85px;
+    //   line-height: 85px;
+    //   vertical-align: middle;
+    //   display: none;
+    //   position: absolute;
+    //   left: 0;
+    //   top: $header-height;
+    //   width: 100%;
+    //   border-top: 1px solid #ddd;
+    //   background-color: #fff;
+    //   z-index: 2;
+    //   padding: 60px 30px;
+    //   text-align: center;
+    //   &.active {
+    //     display: block;
+    //   }
+    //   .tit {
+    //     color: rgba(0, 0, 0, 0.3);
+    //     font-size: 36px;
+    //     font-weight: 600;
+    //     margin-right: 45px;
+    //     vertical-align: top;
+    //     display: inline-block;
+    //     line-height: 30px;
+    //   }
+    //   .search {
+    //     max-width: 680px;
+    //     border-bottom: 2px solid #000;
+    //     padding-bottom: 12px;
+    //     position: relative;
+    //     display: inline-block;
+    //     width: 100%;
+    //     vertical-align: top;
+    //     input {
+    //       display: block;
+    //       line-height: 30px;
+    //       font-size: 20px;
+    //       font-weight: 500;
+    //       color: #000;
+    //       border: 0;
+    //       height: 30px;
+    //     }
+    //     input::placeholder {
+    //       color: #000;
+    //     }
+    //     button {
+    //       position: absolute;
+    //       width: 30px;
+    //       height: 30px;
+    //       right: 0;
+    //       top: 0;
+    //       background: url(../images/common/btn_head_sch.png) no-repeat center;
+    //     }
+    //   }
    
-      @include maxWidth($tb1080) {
-        .tit {
-          text-align: center;
-          margin: 0 0 15px;
-          line-height: 1.4;
-        }
-        .search {
-          max-width: 100%;
-        }
-      }
-      @include maxWidth($m720) {
-        padding: 25px 15px;
-        .tit {
-          font-size: 20px;
-          margin-bottom: 10px;
-        }
-        .search {
-          max-width: 100%;
-          padding-bottom: 10px;
-          input {
-            font-size: 14px;
-            line-height: 22px;
-            height: 22px;
-          }
-          button {
-            width: 22px;
-            height: 22px;
-            background-size: 22px auto;
-          }
-        }
-      }
-    }
+    //   @include maxWidth($tb1080) {
+    //     .tit {
+    //       text-align: center;
+    //       margin: 0 0 15px;
+    //       line-height: 1.4;
+    //     }
+    //     .search {
+    //       max-width: 100%;
+    //     }
+    //   }
+    //   @include maxWidth($m720) {
+    //     padding: 25px 15px;
+    //     .tit {
+    //       font-size: 20px;
+    //       margin-bottom: 10px;
+    //     }
+    //     .search {
+    //       max-width: 100%;
+    //       padding-bottom: 10px;
+    //       input {
+    //         font-size: 14px;
+    //         line-height: 22px;
+    //         height: 22px;
+    //       }
+    //       button {
+    //         width: 22px;
+    //         height: 22px;
+    //         background-size: 22px auto;
+    //       }
+    //     }
+    //   }
+    // }
 
     .search_open {
       padding: 10px;
       height:50px;
       width: 40px;
-      background: url(../images/common/icon_head_search.png) no-repeat center;
+      background: url(../images/common/icon_head_search.png) no-repeat center/21px;
       vertical-align: middle;
       &.active {
         background-image: url(../images/common/btn_close.png);
@@ -577,13 +583,7 @@
       }
     }
   }
-@include maxWidth(1400px){
-  .logo{
-    >a{
-      width: 250px;
-    }
-  }
-}
+
   // 스크롤 시 헤더 스타일 (PC에서만 적용)
   @include minWidth($tb1080 + 1) {
     &.scrolled {
@@ -622,12 +622,17 @@
     }
   }
   @include maxWidth(1410px){
+    .logo{
+      >a{
+        width: 250px;
+      }
+    }
     #gnb{
       width: 550px;
       margin-right: auto;
     }
     .util{
-      width: 320px;
+      width: 340px;
       gap: 10px;
       padding-left: 8px;
       .popup_zone {
@@ -639,7 +644,7 @@
   }
   @include maxWidth(1340px){
     #gnb{
-      width: 472px;
+      //width: 472px;
       margin: auto;
       >ul{
         >li{
@@ -681,11 +686,11 @@
       padding-left: 15px;
     }
     #gnb {
-        display: none;
-      }
-    height: 55px;
-    background: #fff;
-    border-bottom: 1px solid #e5e5e5;
+      display: none;
+    }
+      height: 55px;
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
 
     &.active {
       &:after {
@@ -781,9 +786,9 @@
         }
       }
       
-      .search_box {
-        top: 55px;
-      }
+      // .search_box {
+      //   top: 55px;
+      // }
     }
     /* 사이트맵 */
     .sitemap {
@@ -924,7 +929,7 @@
                 color: #fff;
                 background: #17469d;
                 z-index: 10;
-                &::before{display:block; content: ""; position: absolute; top: 0; left: -20px; width: calc(100% + 60px); height: 100%; background: #17469d; border-radius: 0 50px 20px 0; z-index: -1;}
+                &::before{display:block; content: ""; position: absolute; top: 0; left: -20px; width: calc(100% + 50px); height: 100%; background: #17469d; border-radius: 0 30px 10px 0; z-index: -1;}
               }
               .dep2_wrap {
                 z-index: 2;
@@ -934,7 +939,15 @@
                     > a{ font-size: $fs-15; color: #222; padding: 15px 0; background: url(../images/common/m_menu_arrow_down.png) no-repeat right 20px center/ 9px auto;
                       &:before{display: none;}
                     }
+                    // 하위 메뉴가 없는 메뉴 항목의 배경 제거 (모바일)
+                    &:not(:has(ol)) > a {
+                      background: none;
+                    }
                     &.active{
+                        // 하위 메뉴가 없는 메뉴 항목의 배경 제거 (모바일)
+                    &:not(:has(ol)) > a {
+                      background: none;
+                    }
                       >a{
                         color: #1f60c2;
                         background-image: url(../images/common/m_menu_arrow_up.png);
@@ -1753,7 +1766,7 @@ body.sitemap-open {
     .footer_info{
       padding: 30px 20px 0;
       .footer_left{
-        >ul{
+        >ul{ gap: 15px;
           li{ flex-wrap: wrap;
             span{
               &:first-of-type {
@@ -1762,6 +1775,10 @@ body.sitemap-open {
               &:nth-of-type(2){
                 margin-left: 58px;
               }
+              &:last-of-type{
+                margin-left: 30px;
+              }
+              &::after{display: none;}
             }
             &:nth-child(4){
               span{
@@ -1772,12 +1789,7 @@ body.sitemap-open {
             }
             &:last-child{
               span{
-                &:first-of-type {
-                  flex: none
-                }
-                &:nth-of-type(2){
-                  margin-left: 0;
-                }
+                display: block;
               }
             }
           }
@@ -1797,6 +1809,7 @@ body.sitemap-open {
       padding-top: 0;
       padding: 0 20px 20px;
       flex-wrap: wrap;
+      gap: 10px;
       .copyright{
         width: 100%;
       }
@@ -2143,6 +2156,9 @@ body.modal-open {
   flex-direction: column;
   background: #fff url(../images/common/sitemap_bg.png) no-repeat top -106px left -256px /
     588px;
+    @include maxWidth(1080px){
+      padding: 30px 40px;
+    }
 }
 
 .modal_header {
@@ -2163,15 +2179,18 @@ body.modal-open {
     width: 32px;
     height: 32px;
   }
+
   @include maxWidth(1080px){
-    .modal_container{
-      padding: 30px 40px;
-    }
-    .btn_modal_close{
-      width: 24px;
-      height: 24px;
-    }
+   h3{
+    font-size: $fs-24 !important;
+   }
+   .btn_modal_close{
+    width: 21px;
+    height: 21px;
+   }
   }
+
+
 }
 
 .modal_content {
@@ -2229,6 +2248,7 @@ body.modal-open {
    
       h4{
         width: 150px;
+        font-size: $fs-18;
       }
       .modal_list{
         width: calc(100% - 150px);
@@ -2237,11 +2257,13 @@ body.modal-open {
       }
   }
   @include maxWidth(890px) {
+    
     flex-direction: column;
     h4{
       margin-bottom: 20px;
     }
     .modal_list{
+      width: 100%;
       grid-template-columns: 1fr;
       gap: 8px;
       li{

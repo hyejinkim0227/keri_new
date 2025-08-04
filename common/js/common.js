@@ -234,22 +234,22 @@ function gnbFloatClear() {
   });
 }
 
-function openSearch() {
-  $('.header .util > .search_box,.search_open').addClass('active');
-  $('.search_open').attr('title', '검색창 닫기');
-  var schBoxH = $('.search_box').outerHeight();
-  $('.header').addClass('active').stop().animate({ height: headH + schBoxH + 'px' }, 200);
-  return false;
-}
+// function openSearch() {
+//   $('.header .util > .search_box,.search_open').addClass('active');
+//   $('.search_open').attr('title', '검색창 닫기');
+//   var schBoxH = $('.search_box').outerHeight();
+//   $('.header').addClass('active').stop().animate({ height: headH + schBoxH + 'px' }, 200);
+//   return false;
+// }
 
-function resetSearch() {
-  $('.header').stop().animate({ height: headH + 'px' }, 200, function () {
-    $('.header').removeClass('active');
-    $('.util > .search_box,.search_open').removeClass('active');
-    $('.search_open').attr('title', '검색창 열기');
+// function resetSearch() {
+//   $('.header').stop().animate({ height: headH + 'px' }, 200, function () {
+//     $('.header').removeClass('active');
+//     $('.util > .search_box,.search_open').removeClass('active');
+//     $('.search_open').attr('title', '검색창 열기');
     
-  });
-}
+//   });
+// }
 
 function openPopup() {
   saveFocus(); //이벤트 발생한 요소 기억
@@ -489,10 +489,14 @@ $(function () {
         gnbReset(); // 헤더 높이 초기화
       }
       
-      // 잠시 후 보호 중지 (애니메이션 완료 후)
+      // 잠시 후 보호 중지 및 scrolled 클래스 확인 (애니메이션 완료 후)
       setTimeout(function() {
         if (!$('.header').hasClass('active') && $('.header #gnb > ul > li.active').length === 0) {
           stopScrolledProtection();
+          // section1일 때 (스크롤 위치가 150 이하일 때) scrolled 클래스 제거
+          if ($(window).scrollTop() <= 150) {
+            $('.header').removeClass('scrolled');
+          }
         }
       }, 500);
     },
@@ -1258,7 +1262,7 @@ function initNewsSlider() {
 
     // 반응형에 따른 itemsPerPage 설정
     var itemsPerPage;
-    if (window.innerWidth >= 1281) {
+    if (window.innerWidth >= 1285) {
       // 1920px~1281px: 3개씩 2줄 = 6개
       itemsPerPage = 6;
     } else if (window.innerWidth >= 901) {

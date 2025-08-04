@@ -141,9 +141,9 @@ $sidebar-width: 116px;
 }
 
 .section4 {
-  .container {
-    width: 1300px !important;
-  }
+  // .container {
+  //   width: 1300px !important;
+  // }
 
   .img {
     opacity: 0;
@@ -212,6 +212,14 @@ section {
     transition: transform 0.3s ease;
   }
 
+  @include maxWidth(1200px){
+    h3{
+      >span{
+        display: block;
+        padding-left: 0 !important;
+      }
+    }
+  }
   // 모바일에서 사이드바가 없을 때 여백 제거
   @media screen and (max-width: 1080px) {
     margin: 0 auto;
@@ -223,6 +231,12 @@ section {
     table-layout: unset !important;
     display: block !important;
     transition: none; // 모바일에서는 전환 효과 제거
+    h3{
+      span{
+        display: none !important;
+      }
+    }
+
 
     .fp-tableCell {
       display: block;
@@ -557,12 +571,11 @@ section {
           margin-top: 15px;
 
           b {
-            background: url(../images/main/search_icon_02.png) no-repeat top2px left/22px 15px;
+            background: url(../images/main/search_icon_02.png) no-repeat top 2px left/22px 15px;
             display: inline-block;
             font-size: $fs-15;
             color: #fff;
             font-family: $ff-sbaggro;
-            font-weight: 500;
             padding-left: 27px;
             vertical-align: middle;
 
@@ -615,6 +628,8 @@ section {
           flex-direction: column;
           align-items: center;
           gap: 15px;
+          transition: all 0.3s ease;
+          
 
           span {
             width: 82px;
@@ -625,6 +640,7 @@ section {
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.3s ease;
           }
 
           b {
@@ -632,6 +648,24 @@ section {
             color: #fff;
             font-weight: 600;
             word-break: keep-all;
+            transition: all 0.3s ease;
+            word-break: keep-all;
+          }
+
+          // hover 효과 추가
+          &:hover {
+            transform: translateY(-5px);
+
+            span {
+              background: rgba(0, 0, 0, 1);
+              transform: scale(1.1);
+              box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+            }
+
+            b {
+              color: #fff;
+              opacity: 0.9;
+            }
           }
         }
       }
@@ -773,7 +807,7 @@ section {
       }
     }
 
-    @media screen and (max-width: 1450px) {
+    @media screen and (max-width: 1400px) {
       .fp-tableCell {
         margin-left: 100px;
         display: flex;
@@ -877,7 +911,7 @@ section {
 
     @media screen and (max-width: 1200px) {
       .main_banner_right {
-        width: 300px;
+        width: 280px;
 
         .main_banner_right_con {
           h3 {
@@ -948,7 +982,7 @@ section {
           margin: 0 auto !important;
 
           li a {
-            padding: 15px;
+            //padding: 15px;
 
             img {
               width: 35px;
@@ -963,16 +997,28 @@ section {
       }
 
       .main_banner_right {
-        background: rgba(0, 0, 0, 0.45);
-        ;
+        //background: rgba(0, 0, 0, 0.45);
+         background: none;
         position: relative;
         width: 100%;
         max-width: 100%;
         margin-top: 30px; // 상단 여백 추가
+     
 
         >div {
           display: none;
+          position: absolute;
+          bottom: 45px; // 버튼 높이만큼 위에 위치
+          left: 0;
+          right: 0;
+          z-index: 10;
         }
+
+        // // 토글이 열린 상태일 때 div 표시
+        // &.toggle-open > div {
+        //   display: block;
+        //   background: rgba(0, 0, 0, 0.45);
+        // }
 
 
         .m_main_banner_right_btn {
@@ -1001,85 +1047,7 @@ section {
         }
 
         .main_banner_right_con {
-          background: none;
-          max-height: 0; // 초기에 숨김
-          overflow: hidden;
-          opacity: 0;
-          transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
-          background: rgba(0, 0, 0, 0.45);
-          border-radius: 0 0 10px 10px; // 하단만 둥글게
-          padding: 0 15px; // 초기에는 상하 패딩 0
-          margin-top: 0;
-
-          h3 {
-            color: #fff;
-            margin-bottom: 15px;
-            font-size: $fs-16;
-          }
-
-          ul {
-            li {
-              border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
-              a {
-                display: flex;
-                align-items: flex-start;
-                color: rgba(255, 255, 255, 0.9);
-                padding: 12px 0;
-                font-size: $fs-14;
-                line-height: 1.3;
-
-                span {
-                  display: inline-flex;
-                  align-items: center;
-                  justify-content: center;
-                  width: 18px;
-                  height: 18px;
-                  background: $color1;
-                  border-radius: 6px;
-                  font-size: 12px;
-                  font-weight: 700;
-                  margin-right: 10px;
-                  flex-shrink: 0;
-                  color: #fff;
-                  margin-top: 2px;
-                }
-              }
-
-              &:first-child {
-                a {
-                  padding-top: 0;
-                }
-              }
-
-              &:last-child {
-                border-bottom: none;
-              }
-
-              &:nth-child(4),
-              &:nth-child(5) {
-                a span {
-                  background: #fff;
-                  color: #000;
-                }
-              }
-            }
-          }
-
-          >a {
-            display: block;
-            text-align: center;
-            margin-top: 15px;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: $fs-14;
-            font-weight: 500;
-            border: solid 1px #fff;
-            line-height: 40px;
-            box-sizing: border-box;
-            font-family: $ff-suit;
-          }
+          &::after{display: none;}
         }
 
         .video-container {
@@ -1271,7 +1239,6 @@ section {
 
     @media screen and (max-width: 1080px) {
       background: url(../images/main/m_main_bg.png) no-repeat top center/cover;
-      margin-top: 55px;
       height: auto; // 자동 높이로 변경
       min-height: fit-content;
       padding: 0 0 0;
@@ -1285,7 +1252,7 @@ section {
       }
 
       .main_banner_left {
-        margin: 80px auto 65px; // 상단 여백 줄임
+        margin: 63px auto 40px; // 상단 여백 줄임
         padding: 0 0px;
         width: 100%;
         max-width: 100%;
@@ -2059,13 +2026,38 @@ section {
 
     // 반응형 - 모바일 (1080px 이하)
     @media (max-width: 1080px) {
+      .container {
+        height: auto !important;
+      }
       padding: 60px 30px 60px !important;
       background: url(../images/main/m_domain_bg.png) no-repeat bottom center/cover;
       border-radius: 0;
 
       .domain-controls-wrap {
         top: 310px;
-        right: 50%; margin-right: -155px;
+        right: 60px; 
+
+
+        .domain-controls {
+          transform: scale(0.9);
+  
+          .pagination {
+            font-size: $fs-14;
+            color: #fff;
+          }
+  
+          button {
+            width: 15px;
+            height: 15px;
+            background-size: 15px auto !important;
+            &.pause{
+             background-size: 8px auto !important;
+            }
+            &.play{
+              background-size: 14px auto !important;
+            }
+          }
+        }
        }
 
       .container {
@@ -2087,7 +2079,7 @@ section {
       .domain-content {
         padding: 0;
         width: 100%;
-        max-width: 400px;
+       // max-width: 400px;
         margin: 0 auto;
         height: auto; // 모바일에서는 자동 높이
 
@@ -2117,6 +2109,7 @@ section {
               right: auto;
               bottom: auto;
               top: auto; height: 270px !important;
+              padding: 25px 30px;
             }
 
             .visual {
@@ -2171,29 +2164,7 @@ section {
             }
           }
         }
-
       }
-
-      .domain-controls {
-        bottom: 46%;
-        left: calc(50vw + 50px);
-        right: auto;
-        transform: none;
-        justify-content: center;
-        width: auto;
-
-        .pagination {
-          font-size: $fs-14;
-          color: #fff;
-        }
-
-        button {
-          width: 17px;
-          height: 17px;
-
-        }
-      }
-
 
       &.even-slide .domain-controls {
         left: calc(50% + 50px);
@@ -2206,11 +2177,70 @@ section {
         margin-top: 50px;
       }
     }
-
-    @media (max-width: 1080px) {
-      .container {
-        height: auto !important;
+    @media (max-width: 720px){
+      .domain-content{
+        .content-slide {
+          transform: scale(0.95);
+        }
+        .content-slide[data-index]{
+          .content-slide-inner{
+            padding: 20px 25px;
+        
+          }
+        }
+      
       }
+   
+      .domain-controls-wrap{
+        .domain-controls{
+          top: -10px;
+        }
+      }
+    }
+    @media (max-width: 430px) {
+      .domain-content{
+        .content-slide{
+          .content-slide-inner{
+            >p{
+              font-size: $fs-12;
+            }
+          }
+        }
+      }
+      .domain-controls-wrap {
+        .domain-controls {  
+          top: -13px;
+          right: 10px;
+
+          button {
+            width: 12px;
+            height: 12px;
+            background-size: 12px auto !important;
+
+            &.play{
+              background-size: 14px auto !important;
+            }
+          }
+        }
+       }
+    }
+    @media (max-width: 385px) {
+      .domain-controls-wrap {
+        .domain-controls {  
+          top: -38px;
+          right: 10px;
+
+          button {
+            width: 12px;
+            height: 12px;
+            background-size: 12px auto !important;
+
+            &.play{
+              background-size: 14px auto !important;
+            }
+          }
+        }
+       }
     }
   }
 
@@ -2265,7 +2295,7 @@ section {
       }
 
       // 반응형 처리
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1285px) {
         .container {
           .news_tab_content {
             .tab_panel {
@@ -2349,7 +2379,7 @@ section {
         position: relative;
         //padding-bottom: 62px;
         //max-width: 980px;
-        min-height: 360px;
+       // height: 360px;
         margin-right: 30px;
         width: 75%;
 
@@ -2422,7 +2452,7 @@ section {
 
         .tab_panel {
           display: none;
-          min-height: 280px; // 내용이 없어도 최소 높이 유지
+          height: 480px; // 내용이 없어도 최소 높이 유지
           background: #f7f9ff;
           padding: 60px 8% 60px 55px;
           border-radius: 0 100px 0 0;
@@ -2488,7 +2518,7 @@ section {
                 flex: 1;
                 font-family: $ff-suit;
                 font-size: $fs-17;
-                font-weight: 500;
+                font-weight: 600;
                 line-height: 1.5;
                 color: #333;
                 text-overflow: ellipsis;
@@ -2552,7 +2582,7 @@ section {
       position: relative;
       left: 31.8%;
       //margin-left: -334px;
-      padding: 310px 0 0 100px;
+      padding: 310px 10px 10px 100px;
       border-radius: 0 0 0 100px;
       height: 500px;
       margin-top: -310px;
@@ -2666,14 +2696,14 @@ section {
 
     @media screen and (max-width: 1080px) {
       margin-top: 0px;
-      padding-top: 60px !important;
+      padding-top: 50px !important;
 
       &::after {
         display: none;
       }
 
       h2 {
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         text-align: center;
       }
 
@@ -2693,47 +2723,100 @@ section {
           padding: 0;
         }
 
+        // .news_tab_menu {
+        //   background: transparent;
+        //   width: 100%;
+        //   margin-top: 0;
+        //   display: flex;
+        //   justify-content: center;
+        //   gap: 0;
+        //   align-items: center;
+        //   padding-top: 0;
+        //   position: relative;
+        //   z-index: 1;
+
+        //   li {
+        //     border-bottom: none;
+        //     display: flex;
+
+        //     width: 100%;
+
+        //     &:first-child {
+        //       border-bottom: none;
+
+        //       button,
+        //       a {
+        //         height: 30px;
+        //         font-size: $fs-15;
+
+        //         &::after {
+        //           display: none;
+        //         }
+        //       }
+        //     }
+
+        //     button,
+        //     a {
+        //       height: 30px;
+        //       font-size: $fs-16;
+        //       font-weight: 400;
+        //       align-items: center;
+        //       justify-content: space-around;
+
+
+        //       &::after {
+        //         display: none;
+        //       }
+
+        //       &:hover {
+        //         color: #183365;
+        //       }
+        //     }
+
+
+
+
+        //   }
+        // }
         .news_tab_menu {
-          background: transparent;
+          padding: 0 20px;
           width: 100%;
           margin-top: 0;
           display: flex;
-          justify-content: center;
+          justify-content: space-between;
           gap: 0;
           align-items: center;
-          padding-top: 0;
-          position: relative;
-          z-index: 1;
-
+          
           li {
+            width: auto;
+            gap: 20px;
             border-bottom: none;
             display: flex;
-
-            width: 100%;
+            
+ 
 
             &:first-child {
               border-bottom: none;
-
-              button,
-              a {
+              
+              button,a {
                 height: 30px;
+                width: auto;
                 font-size: $fs-15;
-
+               
                 &::after {
                   display: none;
                 }
               }
             }
 
-            button,
-            a {
+            button, a { 
               height: 30px;
-              font-size: $fs-16;
-              font-weight: 400;
+              font-size: $fs-15;
+              font-weight: 500;
               align-items: center;
               justify-content: space-around;
-
-
+              
+              
               &::after {
                 display: none;
               }
@@ -2742,20 +2825,14 @@ section {
                 color: #183365;
               }
             }
-
-
-
-
           }
         }
-
         .news_tab_content {
           width: 100%;
           padding-bottom: 0;
           min-height: auto;
           max-width: none;
           padding: 0;
-          margin-top: -18px;
 
 
           .news_controls {
@@ -2767,8 +2844,8 @@ section {
             order: 2;
 
             a {
-              width: 50px;
-              height: 50px;
+              width: 38px;
+              height: 38px;
               border: 1px solid #ddd;
 
               &.more {
@@ -2790,15 +2867,15 @@ section {
 
           .tab_panel {
             min-height: auto;
-            padding: 30px 15px 0;
+            padding: 20px 15px 0;
             order: 1;
             border-radius: 0 50px 0 0;
-            background: #fff;
+            height: auto;
 
             .news_slider {
               display: flex;
               flex-direction: column;
-              gap: 15px;
+              gap: 10px;
 
               li {
                 width: 100%;
@@ -2842,22 +2919,22 @@ section {
 
       .news_bottom {
         width: calc(100% + 40px) !important;
-        min-width: none;
-        margin-left: -20px !important;
+        min-width: unset;
+       // margin-left: -20px !important;
         position: unset;
         margin-left: 0;
-        width: 100%;
+        width: auto !important;
         height: auto;
         border-radius: 0;
         margin-top: 0;
-        padding: 38px 0;
+        padding: 38px 10px;
 
 
         .container {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 50px;
+          gap: 15px;
           padding: 0;
           max-width: none;
 
@@ -2895,16 +2972,39 @@ section {
     position: relative;
     overflow: hidden; // 흐르는 텍스트가 영역을 벗어나지 않도록
 
-    @media screen and (max-width: 10800px) {
-      &:before {
-        display: none;
-      }
+    h2{
+      text-align: left;
     }
-
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -2;
+      bottom: 30px;
+      right: 0;
+      width: calc(50% + 5px);
+      height: 603px;
+      opacity: 0.4;
+      border-radius: 100px 0 0 0;
+      background-image: linear-gradient(to top, #d8e1f1, #d5e3e4);
+    }
+  
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      bottom: 18px;
+      right: 0;
+      width: 284px;
+      height: 77px;
+      background:url(../images/main/certification_bg_logo.png) no-repeat right bottom/284px auto;
+    }
+ 
     // 물 흐르는 텍스트 효과를 위한 별도 클래스
     .flowing-text-bg {
       position: absolute;
-      top: 115px;
+      top: 132px;
       left: 0;
       width: 1350px;
       height: 83px;
@@ -2918,11 +3018,12 @@ section {
     .container {
       display: flex;
       justify-content: space-around;
-      gap: 100px;
+      gap: 20px;
     }
 
     .support {
       width: calc(50% - 30px);
+      padding-right: 0px;
 
       .support_banner {
         background: #fff;
@@ -3032,6 +3133,7 @@ section {
         display: flex;
         gap: 10px;
         flex-direction: column;
+        padding-left: 30px;
 
         ul {
           display: flex;
@@ -3077,32 +3179,20 @@ section {
     }
 
     .certifin {
-    
       width: calc(50% - 30px);
       position: relative;
       z-index: 1;
+     // padding-left: 30px;
 
 
-
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -1;
-        bottom: -40px;
-        right: -190px;
-        width: 284px;
-        height: 77px;
-        background: url(../images/main/certification_bg_logo.png) no-repeat right bottom/284px auto;
-      }
 
       .service_cards {
-        padding: 25px;
+        padding: 25px 0;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         height: 252px;
-        margin-bottom: 20px;
+        margin-bottom: 27px;
         background: #abd5ff;
         border-radius: 20px;
 
@@ -3133,7 +3223,7 @@ section {
               flex-direction: column;
               align-items: center;
               justify-content: center;
-
+              width: 187px;
               b {
                 color: #1a2a5c;
                 font-family: $ff-sbaggro;
@@ -3159,9 +3249,10 @@ section {
       }
 
       .application_service {
+        height: 151px;
         border-radius: 20px;
         padding: 29px 27px;
-        margin-bottom: 25px;
+        margin-bottom: 27px;
         background: #d1e9ff url(../images/main/service_bg.png) no-repeat bottom -14px right / 160px auto;
 
         h3 {
@@ -3169,6 +3260,11 @@ section {
           position: relative;
           margin-bottom: 10px;
           line-height: 1.2;
+          
+          &::after{display: inline-block; content: ''; width: 23px; height: 26px;
+            background: url(../images/sub/icon_service.png) no-repeat center 6px / auto 14px; vertical-align: top; 
+            margin-top: -10px;
+          }
         }
 
         .service_buttons {
@@ -3239,15 +3335,27 @@ section {
         }
       }
     }
+    @media screen and (max-width: 1400px){
+      .container{
+        gap: 20px;
+        padding-right: 40px;
+      }
+    }
 
-    @media screen and (max-width: 1480px) {
+    @media screen and (max-width: 1080px) {
       padding-bottom: 0;
+
+      &::before,&::after {
+        display: none;
+      }
       .container {
         display: block;
         width: 100% !important;
+        padding-right: 0px;
 
         .support {
-          width: 100% !important; padding: 0 15px;
+          width: 100% !important; 
+          padding: 0 15px;
 
           h2 {
             margin: 10px 0 20px;
@@ -3255,7 +3363,18 @@ section {
 
           .support_banner {
             width: 110%;
-
+            border-radius: 20px 0 0 20px;
+            border-right: none;
+   
+            >div{
+              h3 {
+                font-size: $fs-20;
+              }
+              
+              .control{
+                display: none;
+              }
+            }
             >div:first-child {
               width: calc(100% - 10%);
               justify-content: space-between;
@@ -3265,12 +3384,14 @@ section {
             >div:last-child {
               width: 1300px;
             }
-
+         
             // jjh 수정
             .support_list {
               .support_item {
                 flex: 0 0 calc(23%); //@@@ 종미
-
+                 span{
+                  display: none;
+                 }
                 // img {
                 //   width: 100%;
                 //   height: auto;
@@ -3278,417 +3399,236 @@ section {
               }
             }
           }
+          .support_search {
+            gap: 20px;
+            padding-left: 0;
+            
+            h3 {
+              font-size: $fs-20;
+              
+              > span {
+                display: block;
+                font-size: $fs-13;
+                margin-top: 8px;
+                font-weight: 300;
+              }
+              b{
+                word-break: keep-all;
+              }
+            }
+  
+            ul {
+              justify-content: space-around;
+              gap: 20px;
+              
+              li {
+                a {
+                  gap: 12px;
+                  width: 90px;
+                  span {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 15px;
+                  }
+  
+                  b {
+                    font-size: $fs-14;
+                    font-weight: 500;
+                  }
+                }
+              }
+            }
+          }
         }
 
         .certifin {
-            margin-top: 60px;
+          margin-top: 60px;
           width: 100%; 
-          padding: 0 0 0 15px;
+          padding:  0 15px;
           &:after{display: none;}
-               h2{margin-bottom: 20px;}
+          h2{margin-bottom: 20px;}
+
           .service_cards {
-            height: 100%; flex-direction: row; align-items: center; padding: 25px 15px; 
-            li a{  border-radius: 10px; margin: 7px; 
+            height: 100%; padding: 25px 10px; gap: 10px;
+            border-radius: 15px;
+            li a{ 
               >span{width: 85px; height: 85px; margin-bottom: 10px; border-radius: 20px;}
-              div{flex-direction: column; align-items: center; justify-content: center; gap: 10px;}
-            }
-          }
-          .certification_con{
-            // /padding: 20px;
-            h3{font-size: $fs-20;}
-            .service_buttons{
-              a{width: 150px; height: 30px; line-height: 30px; font-size: $fs-15; padding: 0 20px 0 10px;}
-            }
-            &::before,&:after{display: none;}
-          }
-        }
-      }
-      
-      .flowing-text-bg {
-        top: 45px;
-      }
-    }
-
-    @media screen and (max-width: 720px) {
-      &:before{display: none;}
-      .support {
-        .support_banner {
-
-          // jjh 수정
-          .support_list {
-            .support_item {
-              flex: 0 0 calc(100vw - 10%);
-
-              img {
-                width: 100%;
-                height: auto;
-              }
-            }
-          }
-        }
-        padding-bottom: 0;
-      }
-
-      .certifin {
-        width: 100%; padding: 0 15px;
-        .certification_con{
-          //padding: 20px;
-          h3{font-size: $fs-20;}
-          .service_buttons{
-            a{width: 100px; height: 30px; line-height: 30px; font-size: $fs-15; padding: 0 20px 0 10px;}
-          }
-          &::before,&:after{display: none;}
-          .service_cards {
-            padding: 25px;
-            flex-direction: column; gap: 10px;
-            height: 100%;
-            li{width: 100% !important;
-              a{display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;
-                span{width: 85px; height: 85px; margin-bottom: 0; border-radius: 20px; text-align: left;}
-                div{flex-direction: column; align-items: center; justify-content: center; width: calc(100% - 85px);  gap: 0px;
-                  >b{font-size: $fs-17; margin-bottom: 0; text-align: left; display: block; width: 100%;}
-                  >em{height: auto; width: 100%; display: block; text-align: left;
-                    span{height: auto; width: 100%;}
-                  }
+              div{flex-direction: column; align-items: center; justify-content: center; gap: 10px; width:  auto;
+                b{
+                  font-size: $fs-17; word-break: keep-all;
+                }
+                  
+                >em{
+                  display: none;
                 }
               }
             }
           }
-        }
-        &:after{display: none !important;}
-      }
-      &:before{display: none !important;}
-      
-      .certifin .application_service{
-        padding: 28px; background: #d1e9ff; text-align: center;
-        h3{font-size: $fs-20; margin-bottom: 10px;  vertical-align: top; line-height: 30px;  height: 30px;
-          &::after{display: inline-block; content: ''; width: 30px; height: 30px; background: url(../images/sub/icon_service.png) no-repeat center 6px / auto 12px;vertical-align: top; }
-        }
-        .service_buttons{
-          flex-direction: column; gap: 10px;
-          a{width: 100% !important; height: 50px; line-height: 50px !important; font-size: $fs-17; padding: 0 20px 0 10px; flex:1; text-align: left; padding-left: 20px; font-weight: 500; background-image: url(../images/sub/icon_service2.png);}
-        }
-
-      }
-      .certification_inquiry{display: none;}
-
-      padding-bottom: 0;
-    }
-
-    /*
-    @media screen and (max-width: 1400px){
-      .container{
-        gap: 20px;
-        padding-right: 40px;
-      }
-    }
-    // 반응형 - 태블릿 (1080px 이하)
-    @media screen and (max-width: 1080px) {
-      &:before {
-        display: none;
-      }
-      
-      &:after {
-        display: none;
-      }
-
-      .flowing-text-bg {
-        display: none;
-      }
-
-      .container {
-        flex-direction: column;
-        gap: 50px;
-        padding: 0 20px;
-      }
-
-      .support {
-        width: 100%;
-
-        h2 {
-          text-align: center;
-          margin-bottom: 30px;
-        }
-
-        .support_banner {
-          padding: 25px 0 22px 25px;
-          margin-bottom: 30px;
-          border-radius: 20px;
-
-          > div {
-            margin-bottom: 20px;
-            padding: 0;
-
+          .application_service{
+            height: 199px;
+            padding: 25px 27px;
+            border-radius: 15px;
             h3 {
               font-size: $fs-20;
-            }
+              margin-bottom: 20px;
 
-            .control {
-              display: none;
-              gap: 8px;
-            
-              button {
-                width: 38px;
-                height: 38px;
-              }
-            }
-          }
-
-          .support_list {
-            .slick-track{
-              margin-left: -40px;
-            }
-            .slick-slide {
-              padding-right: 0px;
-              border: unset !important;
-             // margin-left: -40px;
-            }
-
-            .swiper-slide {
-              padding: 0 30px;
-              border-left: 0;
-            }
-
-            // 조정현 수정 : 2025.08.03
-            .support_item {
-              flex: 0 0 50%;
-              
-              &:nth-child(even) {
-                border-left: 0;
-                padding-left: 30px;
-                margin-right: 0;
-              }
-
-              img {
-                width: 100%;
-                height: 100%;
-                max-width: 576px;
-
-              }
-
-              b {
-                font-size: $fs-16;
-                margin: 20px 0 14px;
-              }
-
-              > div {
-                font-size: $fs-15;
-                height: auto;
-                margin-bottom: 0;
-              }
-
-              span {
+              &::after{
                 display: none;
-              
               }
-            }
-          }
-        }
-
-        .support_search {
-          gap: 20px;
-          
-          h3 {
-            font-size: $fs-20;
+            }  
             
-            > span {
-              display: block;
-              font-size: $fs-13;
-              margin-top: 8px;
-              font-weight: 300;
-            }
-            b{
-              word-break: keep-all;
-            }
-          }
-
-          ul {
-            justify-content: space-around;
-            gap: 20px;
+            .service_buttons{
+              gap: 10px;
+              flex-direction: column;
             
-            li {
               a {
-                gap: 12px;
-
-                span {
-                  width: 80px;
-                  height: 80px;
-                  border-radius: 26px;
-                }
-
-                b {
-                  font-size: $fs-14;
-                  font-weight: 500;
-                }
+                max-width: 180px;
+                width: 100% !important;
+                height: 50px;
+                font-size: $fs-16;
+                line-height: 50px;
+  
               }
             }
           }
+          // .certification_con{
+          //   h3{font-size: $fs-20;}
+          //   .service_buttons{
+          //     a{width: 150px; height: 30px; line-height: 30px; font-size: $fs-15; padding: 0 20px 0 10px;}
+          //   }
+          //   &::before,&:after{display: none;}
+          // }
         }
       }
-
-      .certifin {
-        width: 100%;
-        h2 {
+      
+      .flowing-text-bg {
+        display: none;
+      }
+      .certification_inquiry {
+        background: #eff3f7;
+        border-radius: 15px;
+        padding: 25px 27px;
+        h3 {
+          margin-bottom: 20px;
           text-align: center;
-          margin-bottom: 30px;
+
+          > span {
+            display: none;
+            // display: block;
+            // font-size: $fs-13;
+            // margin-top: 8px;
+            // font-weight: 300;
+          }
         }
 
-        .service_cards {
-          height: auto;
-          margin-bottom: 25px;
-          padding: 30px 20px;
-          align-items: flex-start;
+        > div {
           gap: 10px;
+          flex-direction: column;
 
-          li {
-            a {
-              gap: 20px;
-              justify-content: flex-start;
-           
-              > span {
-                width: 85px;
-                height: 85px;
-                margin-bottom: 0;
-                flex-shrink: 0;
-                border-radius: 30px;
-              }
-              div{
-                
-                > b {
-                  font-size: $fs-17;
-                  margin-bottom: 0;
-                  word-break: keep-all;
-                  text-align: center;
-                  >em{
-                    display: block;
-                  }
-                }
+          a { width: 100% !important;
+            padding: 15px 20px;
+            font-size: $fs-14;
+            border-radius: 12px;
+            height: auto;
+            line-height: 1.4;
 
-                > em {
-                  display: none;
-                  font-size: $fs-14;
-                  line-height: 1.4;
-            
-                }
-              }
+            &:nth-child(1),
+            &:nth-child(2) {
+              width: 100%;
             }
-          }
-        }
 
-        .application_service {
-          padding: 25px;
-          margin-bottom: 25px;
-          border-radius: 15px;
-          background-size: 200px auto;
-
-          h3 {
-            font-size: $fs-20;
-            margin-bottom: 20px;
-       
-          }
-
-          .service_buttons {
-            gap: 10px;
-            flex-direction: column;
-
-            a {
-              max-width: 180px;
-              width: 100% !important;
-              height: 50px;
-              font-size: $fs-16;
-              line-height: 50px;
-
-            }
-          }
-        }
-
-        .certification_inquiry {
-          h3 {
-            margin-bottom: 20px;
-            text-align: center;
-
-            > span {
-              display: block;
-              font-size: $fs-13;
-              margin-top: 8px;
-              font-weight: 300;
-            }
-          }
-
-          > div {
-            gap: 10px;
-
-            a {
-              padding: 15px 20px;
-              font-size: $fs-14;
-              border-radius: 12px;
-              height: auto;
-              line-height: 1.4;
-
-              &:nth-child(1),
-              &:nth-child(2) {
-                width: 100%;
-              }
-
-              &:nth-child(3) {
-                display: none;
-              }
+            &:nth-child(3) {
+              display: none;
             }
           }
         }
       }
     }
-    @media screen and (max-width: 720px){
-      .support {
-        .support_search{
-          ul{
-            li{
-              a{
-                b{text-align: center;
-                  em{display: block;}
-                }
-              
-              }
-            }
-          }
-        }
-      }
-     
-    } 
-    @media screen and (max-width: 470px){
-      .support {
-        .support_search{
-          ul{
-            li{
-              a{
-                span{
-                  width: 40px;
-                  height: 40px;
-                }
-              
-              }
-            }
-          }
-        }
 
-        // 조정현 수정 : 2025.08.03
-        .support_banner {
-          .support_list {
-            .support_item {
-              flex: 0 0 20%;
 
-              &:nth-child(even) {
-                border-left: 0;
-                padding-left: 15px;
-                margin-right: 0;
+
+      @media screen and (max-width: 470px){
+        .container{
+          .support {
+            .support_search{
+              ul{gap: 10px;
+                li{ 
+                  a{width: auto;
+                    span{
+                      width: 65px;
+                      height: 65px;
+                      img{
+                        width: 35px;
+                        height: auto;
+    
+                      }
+                    }
+                  
+                  }
+                  &:last-child{
+                    a{
+                      span{
+                        img{
+                          width: auto;
+                          height: 35px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            // 조정현 수정 : 2025.08.03
+             .support_banner {
+              .support_list {
+                .support_item {
+                  flex: 0 0 20%;
+    
+                  &:nth-child(even) {
+                    border-left: 0;
+                    padding-left: 15px;
+                    margin-right: 0;
+                  }
+                  >div{
+                    margin-bottom: 0;
+                    height: 38px;
+                  }
+                }
+              }
+            }
+          }
+          .certifin{
+            .service_cards{
+              li{
+                a{
+                 
+                  span{
+                    width: 65px;
+                    height: 65px;
+                    img{
+                      width: 30px;
+                      height: auto;
+                    }
+                  }
+                  div{
+                    b{font-size: $fs-16;}
+                  }
+                }
+              }
+            }
+            .application_service{
+              .service_buttons{
+                a{
+                  max-width: 130px;
+                }
               }
             }
           }
         }
-      }
-     
+    
     } 
-      */
+
+  
   }
 
   // 폰트 물 흐르는 효과 애니메이션 정의
@@ -3711,7 +3651,7 @@ section {
     &::before {
       content: '';
       display: block;
-      width: 100%;
+      width: min(calc(100% - 114px), 100%);
       min-width: 300px; // 최소 너비 보장
       height: 525px;
       background: #f6f6f6;
@@ -3725,6 +3665,7 @@ section {
     .container {
       display: block;
       margin: 0 auto;
+      padding-left: 20px;
 
       h2 {
         text-align: center;
@@ -3749,7 +3690,7 @@ section {
         max-width: 100%;
 
         h3 {
-          margin-bottom: 20px;
+          margin-bottom: 0px;
         }
       }
 
@@ -3760,6 +3701,8 @@ section {
           display: flex;
           justify-content: space-between;
           gap: 20px;
+          padding: 20px 0;
+
 
           >div {
             width: calc((100% - 40px) / 3);
@@ -3815,7 +3758,7 @@ section {
               line-height: 1.4;
               letter-spacing: -0.45px;
               margin: 0 24px 24px;
-              height: 34px;
+              height: 38px;
             }
 
             img {
@@ -4129,10 +4072,11 @@ section {
    // 반응형 - 태블릿 (1080px 이하)
     @media screen and (max-width: 1080px) {
       padding: 20px 15px 0 !important;
+      margin-top: 48px;
 
       &::before {
         width: 100%;
-        height: auto;
+       height: 700px;
         border-radius: 50px 50px 0 0;
       }
 
@@ -4148,15 +4092,17 @@ section {
       &_top {
         flex-direction: column;
         margin: 10px 0 40px;
-        gap: 30px;
+        gap: 14px;
+
+
+        h3 {
+          margin-left: 0 !important; 
+          margin-bottom: 0px !important;
+          text-align: left !important;
+        }
 
         .interview_wrap {
           order: 1;
-
-
-          h3 {
-            margin-bottom: 0; text-align: center;
-          }
 
           .interview_header {
             margin-bottom: 15px;
@@ -4213,8 +4159,20 @@ section {
           .interview {
             >div {
               a {
+                b{
+                  margin-top: 28px;
+                }
+                span{
+                  font-size: $fs-14;
+                  margin: 0 20px 15px;
+
+                }
                 width: 100%;
                 height: 100%;
+                //border-radius: 20px;
+                img{
+                 // border-radius: 0 0 20px 20px;
+                }
               }
             }
 
@@ -4230,6 +4188,7 @@ section {
             // 슬라이더가 초기화되지 않았을 때 모바일 기본 레이아웃
             &:not(.slick-initialized) {
               display: block; width: 1230px;
+              padding: 16px 0;
 
               >div.interview_item {
                 width: 1;
@@ -4285,25 +4244,26 @@ section {
           order: 2;
           width: 100%;
 
-          h3 {
-            margin-left: 0; text-align: center; margin-bottom: 5px;
-          }
+        h3{
+          margin-bottom: 19px !important;
+        }
 
           .inner {
-            width: 100%;
+            width: calc(100% - 20px);
             height: 310px;
             max-width: none;
             padding: 0 25px 0;
-            border-radius: 25px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
             margin-left: 0;
+            background-size: 96% auto;
+
 
             &:after {
               top: 38px;
-              right: -10px;
+              right: -15px;
               width: 168px;
               height: 234px;
             }
@@ -4386,9 +4346,9 @@ section {
           width: 100%;
           height: auto;
           max-width: 100%;
-          padding: 30px;
+          padding: 30px 25px;
           background-size: 250px;
-          background-position: right 18px bottom -49px;
+          background-position: right -18px bottom -49px;
           background-image: url(../images/main/m_promotional_character.png);
 
           h4 {
@@ -4399,6 +4359,7 @@ section {
             width: 175px;
             justify-content: flex-start;
             gap: 10px;
+            margin-left: -6px;
 
             li a {
               width: 50px;
@@ -4439,11 +4400,29 @@ section {
     }
 
     @media screen and (max-width: 600px) {
+      &_top{
+        .publications_wrap{
+          .inner{
+            &:after{
+              top: 39px;
+              width: 156px;
+              height: 222px;
+            }
+          }
+        }
+      }
       &_bottom {
         .video_box{
           display: block; height: auto; padding: 0;
           .video_wrap {
             width: 100%;
+          }
+        }
+        .sns_box{
+          background-size: 180px;
+          background-position: right -18px bottom -20px;
+          >ul{
+            gap: 0px;
           }
         }
       }
