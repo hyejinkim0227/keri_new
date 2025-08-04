@@ -237,17 +237,39 @@
       z-index: 1;
       background-color: #fff;
       border-top: 1px solid #ddd;
+      >ul{
+        >li{
+          >a{
+            position: relative;
+            &[target="_blank"]{
+              &:after{
+                content: "";
+                width: 16px;
+                height: 16px;
+                display: block;
+                margin-left: 8px;
+                margin-top: -2px;
+                padding-right: 0;
+                background: url(../images/common/icon_link_black.png) no-repeat right center / 16px auto;
+                position: absolute;
+                right: 17px;
+                top: 42%;
+              }
+            }
+          }
+        }
+      }
       a[target="_blank"] {
         &:after {
           vertical-align: middle;
-          width: 12px;
-          height: 12px;
+          width: 14px;
+          height: 14px;
           display: inline-block;
           margin-left: 8px;
           margin-top: -2px;
           padding-right: 0;
-          background: url(../images/common/icon_gnb_link.png) no-repeat right
-          center/12px auto;
+          background: url(../images/common/icon_link_blue.png) no-repeat right
+          center/14px auto;
           content: "";
         }
       }
@@ -324,11 +346,14 @@
             background: url(../images/common/icon_lnb_hover.png) no-repeat right
                 19px center / 14px auto,
               linear-gradient(to right, #ff7316, #ff8839);
+              &[target="_blank"]{
+                &:after{display: none;}
+              }
           }
           // 하위 메뉴가 없는 메뉴 항목의 hover 배경도 제거
-          &:not(:has(ol)):hover > a {
-            background: linear-gradient(to right, #ff7316, #ff8839);
-          }
+          // &:not(:has(ol)):hover > a {
+          //   background: linear-gradient(to right, #ff7316, #ff8839);
+          // }
           &.col2 {
             width: 432px;
             ol {
@@ -934,6 +959,7 @@
               .dep2_wrap {
                 z-index: 2;
                 display: block; border-top: none; margin-top: 30px;
+                border-bottom: none;
                 > ul{display: block;
                   > li{ width: 94%;
                     > a{ font-size: $fs-15; color: #222; padding: 15px 0; background: url(../images/common/m_menu_arrow_down.png) no-repeat right 20px center/ 9px auto;
@@ -1080,7 +1106,7 @@
                     margin-left: 5px;
                     margin-top: -2px;
                     padding-right: 0;
-                    background: url(../images/common/icon_sitemap_link_m.png)
+                    background: url(../images/common/m_icon_link_grey.png)
                       no-repeat right center/12px auto;
                     content: "";
                   }
@@ -1261,10 +1287,10 @@ body.sitemap-open {
               &:after {
                 content: "";
                 display: inline-block;
-                width: 12px;
-                height: 12px;
+                width: 16px;
+                height: 16px;
                 margin-left: 8px;
-                background: url(../images/common/icon_lnb_outlink_blue.png)
+                background: url(../images/common/icon_lnb_outlink_black.png)
                   no-repeat center;
                 background-size: contain;
                 vertical-align: middle;
@@ -1296,8 +1322,8 @@ body.sitemap-open {
               &:after {
                 content: "";
                 display: inline-block;
-                width: 10px;
-                height: 10px;
+                width: 12px;
+                height: 12px;
                 margin-left: 6px;
                 background: url(../images/common/icon_lnb_outlink_black.png)
                   no-repeat center;

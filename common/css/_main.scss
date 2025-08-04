@@ -783,6 +783,15 @@ section {
           line-height: 56px;
           box-sizing: border-box;
           font-family: $ff-suit;
+          &:after{
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: url(../images/main/main_banner_right_arrow.png) no-repeat center right/6px auto;
+            margin-left: 28px;
+          }
+      ;
 
         }
       }
@@ -998,7 +1007,7 @@ section {
 
       .main_banner_right {
         //background: rgba(0, 0, 0, 0.45);
-         background: none;
+        background: none;
         position: relative;
         width: 100%;
         max-width: 100%;
@@ -1008,17 +1017,19 @@ section {
         >div {
           display: none;
           position: absolute;
-          bottom: 45px; // 버튼 높이만큼 위에 위치
+          top: 55px;
           left: 0;
           right: 0;
           z-index: 10;
+          background: rgba(0, 0, 0, 0.8);
+          height: calc(100% - 100px);
         }
 
-        // // 토글이 열린 상태일 때 div 표시
-        // &.toggle-open > div {
-        //   display: block;
-        //   background: rgba(0, 0, 0, 0.45);
-        // }
+        // 토글이 열린 상태일 때 div 표시
+        &.toggle-open > div {
+          display: block;
+         
+        }
 
 
         .m_main_banner_right_btn {
@@ -1048,6 +1059,20 @@ section {
 
         .main_banner_right_con {
           &::after{display: none;}
+          h3{
+            display: none;
+          }
+          ul{padding: 0;
+            li{
+              a{
+                span{
+                  &:last-of-type{
+                   width: 200px;
+                  }
+                }
+              }
+            }
+          }
         }
 
         .video-container {
@@ -1068,20 +1093,30 @@ section {
         // 토글이 열린 상태
         &.toggle-open {
           .main_banner_right_con {
-            max-height: 400px; // 충분한 높이 설정
+           // max-height: 400px; // 충분한 높이 설정
             opacity: 1;
-            padding: 20px 15px; // 열린 상태에서는 정상 패딩
+            padding: 29px 35px 60px;// 열린 상태에서는 정상 패딩
+            height: 100%;
+            >a{
+              margin-top: 40px;
+              border-width: 1.5px;
+              font-size: $fs-16;
+              border-radius: 10px;
+            }
+            ul{
+              li{ border-bottom-color: #fff;
+                a{
+                  padding: 24px 0;
+                }
+              }
+            }
           }
 
           .video-container {
-            max-height: 220px; // iframe 높이 + 여백
-            opacity: 1;
-            margin-top: 15px;
+           display: none;
           }
 
           .m_main_banner_right_btn {
-            border-radius: 10px 10px 0 0;
-
             &::after {
               transform: rotate(180deg); // 화살표 뒤집기
             }
