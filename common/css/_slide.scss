@@ -1,0 +1,38 @@
+.slide_box {position:relative;
+    .slide {
+        .item {border:5px solid #000;
+            a {display:block;height:300px;}
+        }
+        
+    }
+    .pagination_dot {text-align:center;position:absolute;left:20px;bottom:20px;
+        li {float:left;font-size:1rem;margin:0 5px;}
+        .slick-active button {
+            background-color:red;
+        }
+        button {$dotSize : 20px;
+            width:$dotSize;height:$dotSize;border-radius:$dotSize;background-color:#eee;overflow:hidden;text-indent:-9999px;}
+    }
+    .progress_bar {position:absolute;left:20px;top:20px;width: 100%;max-width:200px;height: 3px;background: #eee;
+        .progress {
+            width: 0%;
+            height: 3px;
+            background: #000;
+        }
+    }
+    .control {position:absolute;right:20px;top:20px;font-size:0;
+        :nth-child(n) {display:inline-block;font-size:1rem;margin:0 5px;vertical-align:top;}
+        .btn {$btnSize : 22px; width:$btnSize;height:$btnSize;border:1px solid #000;border-radius:$btnSize;overflow:hidden;text-indent:$btnSize;
+            &.next {background:url('../images/next.png') no-repeat center center;}
+            &.prev {background:url('../images/prev.png') no-repeat center center;}
+            &.pause {background:url('../images/pause.png') no-repeat center center;}
+            &.play {background:url('../images/play.png') no-repeat center center;}
+        }
+        
+
+    }
+}
+
+// 고정사이즈의 경우 width값을 정해줘야 함
+#slide4 .slide .item{width:500px;}
+

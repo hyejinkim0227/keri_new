@@ -1,0 +1,9 @@
+.menu{
+    li{margin-bottom: 30px; font-size: 20px; border: 1px solid #000;
+        &:last-child{margin-bottom:0;}
+        a{display: block; background: #eee;  padding:20px;} 
+        > div{display:none; font-size: 17px;
+            > div{padding: 20px; }
+        }
+    }
+}

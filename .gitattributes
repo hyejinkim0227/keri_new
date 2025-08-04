@@ -1,0 +1,56 @@
+# =========================
+# 기본 텍스트 파일: LF로 통일
+# =========================
+* text=auto eol=lf
+
+# =========================
+# 소스 코드
+# =========================
+*.js     text eol=lf
+*.ts     text eol=lf
+*.jsx    text eol=lf
+*.tsx    text eol=lf
+*.vue    text eol=lf
+*.css    text eol=lf
+*.scss   text eol=lf
+*.sass   text eol=lf
+*.html   text eol=lf
+*.json   text eol=lf
+*.md     text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.sh     text eol=lf
+*.py     text eol=lf
+*.java   text eol=lf
+*.kt     text eol=lf
+
+# =========================
+# Windows 실행 파일/바이너리 → 자동 처리 (줄바꿈 영향 없음)
+# =========================
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.mp4    binary
+*.mov    binary
+*.zip    binary
+*.tar    binary
+*.gz     binary
+*.woff   binary
+*.woff2  binary
+*.ttf    binary
+*.eot    binary
+*.pdf    binary
+*.exe    binary
+*.dll    binary
+*.so     binary
+
+# =========================
+# Git 자체 파일
+# =========================
+.gitattributes text eol=lf
+.gitignore     text eol=lf
+.editorconfig  text eol=lf
+.prettierrc    text eol=lf
+.eslintrc      text eol=lf

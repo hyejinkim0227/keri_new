@@ -1,0 +1,24 @@
+// 탭 (수평)
+.tap_box {$tabH:40px;border:2px solid red; 
+  position:relative;@include ftItem(4,0);
+  > li {
+      > button {height:$tabH;width:100%;border:1px solid #fff;}
+      > div {display:none;position:absolute;left:0;top:$tabH;width:100%;background-color:#fff;}
+      &.active {
+          > button {background-color:#000;}
+          > div {display:block;}
+      }
+  }
+}
+// 탭 (수직)
+.tap_box2 {$tabW:150px;border:2px solid red; 
+  position:relative;
+  > li {
+      > button {height:40px;width:$tabW;border:1px solid #fff;}
+      > div {display:none;position:absolute;left:$tabW;top:0;width:calc(100% - #{$tabW});background-color:#fff;}
+      &.active {
+          > button {background-color:#000;}
+          > div {display:block;}
+      }
+  }
+}

@@ -1,0 +1,526 @@
+@use "sass:math";
+/* SUIT 폰트 - 여러 굵기 (공공기관 호환성 최적화) */
+@font-face {
+  font-family: 'SUIT';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../fonts/SUIT-Thin.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/SUIT-Thin.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SUIT-Thin.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'SUIT';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/SUIT-ExtraLight.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/SUIT-ExtraLight.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/SUIT-ExtraLight.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SUIT-ExtraLight.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'SUIT';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/SUIT-Light.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/SUIT-Light.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/SUIT-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SUIT-Light.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'SUIT';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/SUIT-Regular.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/SUIT-Regular.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/SUIT-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SUIT-Regular.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'SUIT';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/SUIT-Medium.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/SUIT-Medium.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/SUIT-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SUIT-Medium.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'SUIT';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/SUIT-SemiBold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/SUIT-SemiBold.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/SUIT-SemiBold.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SUIT-SemiBold.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'SUIT';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/SUIT-Bold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/SUIT-Bold.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/SUIT-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SUIT-Bold.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'SUIT';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/SUIT-ExtraBold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/SUIT-ExtraBold.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/SUIT-ExtraBold.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SUIT-ExtraBold.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'SUIT';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/SUIT-Heavy.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/SUIT-Heavy.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/SUIT-Heavy.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SUIT-Heavy.otf') format('opentype'); /* Fallback */
+}
+
+/* PretendardGOV 폰트 - 여러 굵기 (공공기관 호환성 최적화) */
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../fonts/PretendardGOV-Thin.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/PretendardGOV-Thin.woff') format('woff'); /* IE9+, Legacy Modern Browsers */
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/PretendardGOV-ExtraLight.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/PretendardGOV-ExtraLight.woff') format('woff'); /* IE9+, Legacy Modern Browsers */
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/PretendardGOV-Light.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/PretendardGOV-Light.woff') format('woff'); /* IE9+, Legacy Modern Browsers */
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/PretendardGOV-Regular.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/PretendardGOV-Regular.woff') format('woff'); /* IE9+, Legacy Modern Browsers */
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/PretendardGOV-Medium.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/PretendardGOV-Medium.woff') format('woff'); /* IE9+, Legacy Modern Browsers */
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/PretendardGOV-SemiBold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/PretendardGOV-SemiBold.woff') format('woff'); /* IE9+, Legacy Modern Browsers */
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/PretendardGOV-Bold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/PretendardGOV-Bold.woff') format('woff'); /* IE9+, Legacy Modern Browsers */
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/PretendardGOV-ExtraBold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/PretendardGOV-ExtraBold.woff') format('woff'); /* IE9+, Legacy Modern Browsers */
+}
+
+/* SBAggro 폰트 - Light, Medium, Bold (기본 호환성) */
+@font-face {
+  font-family: 'SBAggro';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/SBAggroL.woff2') format('woff2'), /* Modern browsers */
+       url('../fonts/SBAggroL.woff') format('woff'), /* Modern browsers */
+       url('../fonts/SBAggroL.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SBAggroL.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'SBAggro';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/SBAggroM.woff2') format('woff2'), /* Modern browsers */
+       url('../fonts/SBAggroM.woff') format('woff'), /* Modern browsers */
+       url('../fonts/SBAggroM.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SBAggroM.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'SBAggro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/SBAggroB.woff2') format('woff2'), /* Modern browsers */
+       url('../fonts/SBAggroB.woff') format('woff'), /* Modern browsers */
+       url('../fonts/SBAggroB.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SBAggroB.otf') format('opentype'); /* Fallback */
+}
+
+/* SCDream4 폰트 */
+@font-face {
+  font-family: 'SCDream4';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/SCDream4.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/SCDream4.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/SCDream4.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SCDream4.otf') format('opentype'); /* Fallback */
+}
+
+/* FlightSans 폰트 - Regular, Bold */
+@font-face {
+  font-family: 'FlightSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/FlightSans-Regular.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/FlightSans-Regular.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/FlightSans-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/FlightSans-Regular.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/FlightSans-Regular.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'FlightSans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/FlightSans-Bold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/FlightSans-Bold.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/FlightSans-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/FlightSans-Bold.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/FlightSans-Bold.otf') format('opentype'); /* Fallback */
+}
+
+/* TheJamsil 폰트 - Regular, Medium, Bold */
+@font-face {
+  font-family: 'TheJamsil';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/TheJamsil-Regular.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/TheJamsil-Regular.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/TheJamsil-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/TheJamsil-Regular.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'TheJamsil';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/TheJamsil-Medium.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/TheJamsil-Medium.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/TheJamsil-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/TheJamsil-Medium.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'TheJamsil';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/TheJamsil-Bold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/TheJamsil-Bold.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/TheJamsil-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/TheJamsil-Bold.otf') format('opentype'); /* Fallback */
+}
+
+/* Pretendard 폰트 - 여러 굵기 */
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../fonts/Pretendard-Thin.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Pretendard-Thin.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/Pretendard-Thin.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Pretendard-Thin.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/Pretendard-ExtraLight.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Pretendard-ExtraLight.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/Pretendard-ExtraLight.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Pretendard-ExtraLight.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/Pretendard-Light.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Pretendard-Light.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/Pretendard-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Pretendard-Light.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Pretendard-Regular.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Pretendard-Regular.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/Pretendard-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Pretendard-Regular.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Pretendard-Medium.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Pretendard-Medium.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/Pretendard-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Pretendard-Medium.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/Pretendard-SemiBold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Pretendard-SemiBold.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/Pretendard-SemiBold.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Pretendard-SemiBold.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Pretendard-Bold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Pretendard-Bold.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/Pretendard-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Pretendard-Bold.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/Pretendard-ExtraBold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Pretendard-ExtraBold.woff') format('woff'), /* IE9+, Legacy Modern Browsers */
+       url('../fonts/Pretendard-ExtraBold.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Pretendard-ExtraBold.otf') format('opentype'); /* Fallback */
+}
+
+@font-face {
+  font-family: 'century-gothic-bold';
+  src: url('../fonts/century-gothic-bold.woff2') format('woff2'),
+       url('../fonts/century-gothic-bold.woff') format('woff'),
+       url('../fonts/century-gothic-bold.ttf') format('truetype'),
+       url('../fonts/century-gothic-bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+	
+/********* reset.css **********/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ul, ol, li, form, fieldset, legend, label, input, button, select, textarea, header, main, footer, section, article, aside, menu, nav, table, caption, tbody, tfoot, thead, tr, th, td, summary, figure, figcaption, hgroup { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; -webkit-box-sizing: border-box; box-sizing: border-box;}
+html, body { width: 100%; height: 100%; }
+body {font-size: 16px; line-height: 1.4; color: #000; letter-spacing: -0.05em;font-family:'SUIT','PretendardGOV','Pretendard';}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+h1, h2, h3, h4, h5, h6 { font-size: 1em; font-weight: normal;}
+ul, ol, li { list-style-type: none; }
+a { color: inherit; text-decoration: none; cursor: pointer; }
+img { max-width: 100%; border: 0;vertical-align:top; }
+p { max-height: 9999px; }
+address { font-style: normal; }
+button { margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; border: 0 none; background-color: transparent; font-family: inherit; font-size: inherit; cursor: pointer;-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none; -webkit-box-sizing: border-box; box-sizing: border-box; cursor: pointer;  }
+caption,legend { height: 1px; width: 1px; overflow: hidden; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); margin: -1px;}
+.sr-only {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);white-space: nowrap;border: 0;}
+.block {display: block;}
+
+table {display:table;width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;}
+select::-ms-expand { display: none; }
+input::-ms-check { display: none; }
+form {display:block;width:100%;}
+input, select, textarea {padding: 0 15px; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none; -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%; display: block; border: 0; font-family: inherit; }
+iframe{border: none; outline: none; }
+
+// image path
+$imgPath: "../images/";
+
+//color
+
+$color1:#17469d;
+$grey:#666;
+$bg-color1:#e9a027;
+$bg-color2:#1f60c2;
+
+
+//border
+$border1: 1px solid #cbcccd;
+$border2 : 1px solid #dfdfdf;
+
+//font-family
+$ff-suit:'SUIT','Pretendard';
+$ff-pretendard:'Pretendard','Pretendard';
+$ff-pretendardgov:'PretendardGOV','Pretendard';
+$ff-sbaggro:'SBAggro','Pretendard';
+$ff-scdream:'SCDream4','Pretendard';
+$ff-flightsans:'FlightSans','Pretendard';
+$ff-thejamsil:'TheJamsil','Pretendard';
+$ff-centuryGothic:'century-gothic-bold','Pretendard';
+
+
+//font-size
+$fs-10:0.625rem;// 10px
+$fs-12:0.75rem;// 12px
+$fs-13:0.8125rem;// 13px
+$fs-14:0.875rem;// 14px
+$fs-15:0.9375rem;// 15px
+$fs-16:1rem;// 16px
+$fs-17:1.0625rem;// 17px
+$fs-18:1.125rem;// 18px
+$fs-19:1.1875rem;// 19px
+$fs-20:1.25rem;// 20px
+$fs-21:1.3125rem;// 21px
+$fs-22:1.375rem;// 22px
+$fs-23:1.4375rem;// 23px
+$fs-24:1.5rem;// 24px
+$fs-25:1.5625rem;// 25px
+$fs-26:1.625rem;// 26px
+$fs-28:1.75rem;// 28px
+$fs-30:1.875rem;// 30px
+$fs-32:2rem;// 32px
+$fs-34:2.125rem;// 34px
+$fs-40:2.5rem;// 40px
+$fs-46:2.875rem;// 46px
+$fs-60:3.75rem;// 60px
+
+
+//style
+$header-height: 85px;
+//mixin
+
+
+// ... 처리
+@mixin ell1{max-width: 100%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+@mixin ell2{text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+@mixin ell3{text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
+@mixin ell4{text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
+
+/*요소중앙정렬*/
+@mixin align($align,$font-size){
+    font-size:0;
+    &:before{display:inline-block;height:100%;content:''; vertical-align:$align;}
+    > :nth-child(n) {font-size:$font-size;display:inline-block;vertical-align:$align;}
+}
+
+/*아이템 정렬*/
+@mixin ftItem($i,$pd){
+	> :nth-child(n){
+		float:left;
+		$width-percent: math.div(100, $i) * 1%;
+		$margin-px: math.div(($i - 1) * $pd, $i) * 1px;
+		width:calc(#{$width-percent} - #{$margin-px});
+		margin-right:#{$pd}px;
+	}
+	> :nth-of-type(#{$i}n){margin-right:0;}
+}
+
+// 반응형 중단점
+$container: 1920px;
+$pc1200: 1200px;
+$tb1080: 1080px;
+$m720: 720px;
+
+
+@mixin scrollBar{
+  &::-webkit-scrollbar {
+    width: 6px;
+    height:6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #17469d;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #d4d4d4;
+    border-radius: 6px;
+  }
+}
+@mixin scrollBar2{
+  &::-webkit-scrollbar {
+    width: 8px;
+    height:8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #17469d;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 8px;
+  }
+}
+
+@mixin maxWidth($width){
+	@media screen and (max-width:$width){
+        @content;
+    }
+}
+@mixin minWidth($width){
+	@media screen and (min-width:$width){
+        @content;
+    }   
+}
+
+
+
+#wrapper.main {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  transform-origin: left top;
+
+  &.pc-mode {
+    min-width: 1920px;
+    transform: scale(var(--scale));
+    transform-origin: left top;
+    
+    // PC 모드에서도 fullPage.js가 정상 동작하도록
+    #fullpage {
+      // 기본 fullPage.js 동작 유지
+    }
+  }
+
+  &:not(.pc-mode) {
+    min-width: unset;
+    width: 100%;
+    transform: none;
+  }
+}

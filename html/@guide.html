@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>외교부 국문 퍼블리싱 작업현황판</title>
+  <style>
+    html,
+    body,
+    div,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    em,
+    img,
+    strong,
+    b,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    footer,
+    header,
+    menu,
+    nav,
+    section {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      padding: 2em;
+      line-height: 1.4;
+      font-family: applegothic, "나눔고딕", nanumgothic, "맑은 고딕",
+        malgungothic, dotum, "돋움";
+      font-size: 13px;
+      color: #333;
+    }
+
+    ul,
+    ol {
+      list-style-type: none;
+    }
+
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    h1 {
+      font-size: 1.45em;
+    }
+
+    h2 {
+      margin-bottom: 5px;
+      font-size: 1.3em;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    th {
+      vertical-align: middle;
+      word-break: break-all;
+    }
+
+    td {
+      vertical-align: middle;
+      word-break: break-all;
+    }
+
+    a {
+      color: #666;
+    }
+
+    .hidden {
+      position: absolute;
+      top: -99999em;
+      left: -99999em;
+    }
+
+    .info {
+      margin: 0 0 3em;
+      width: 100%;
+      border-top: 1px dashed #ddd;
+    }
+
+    .info th {
+      padding: 0.5em 1em;
+      border-bottom: 1px dashed #ddd;
+      text-align: left;
+      border-right: 0;
+      background-color: #f6f6f6;
+    }
+
+    .info td {
+      padding: 0.5em 1em;
+      border-bottom: 1px dashed #ddd;
+      text-align: left;
+      border-left: 0;
+    }
+
+    .work {
+      width: 100%;
+      margin: 0 0 3em;
+      width: 100%;
+      border-top: 2px solid #aaa;
+    }
+
+    .work th {
+      font-family: "calbri";
+      padding: 0.5em;
+      border: 1px solid #ddd;
+      border-left-width: 0;
+      background: #f9f9f9;
+    }
+
+    .work td {
+      padding: 0.5em;
+      border-bottom: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      background: #fff;
+      vertical-align: middle;
+    }
+
+    .work th:last-child,
+    .work td:last-child {
+      border-right-width: 0;
+    }
+
+    .tit td {
+      border-top: 2px solid #ccc;
+    }
+
+    .work td:nth-last-child(2),
+    .work td:nth-last-child(3) {
+      text-align: center;
+      color: #666;
+    }
+
+    .yellow td {
+      background: #fff8d0;
+    }
+
+    .red {
+      color: #dc5959;
+    }
+
+    .status {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    .status h2 {
+      float: left;
+    }
+
+    .status span {
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    .tit1 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .work tbody {
+      counter-reset: num;
+    }
+
+    .work tbody td:nth-last-of-type(2):before {
+      counter-increment: num;
+      content: counter(num);
+    }
+
+  </style>
+</head>
+
+<body>
+  <h2 style="font-family: 'calbri'">Project info.</h2>
+  <table class="info">
+    <caption>
+      <span class="hidden">프로젝트 기본 정보</span>
+    </caption>
+    <colgroup>
+      <col style="width: 180px" />
+      <col />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th scope="row">1. 프로젝트명</th>
+        <td>외교부 국문 작업 현황</td>
+      </tr>
+      <tr>
+        <th scope="row">2. 인코딩 방식</th>
+        <td>utf-8</td>
+      </tr>
+      <tr>
+        <th scope="row">3. dtd 사용</th>
+        <td>Html5</td>
+      </tr>
+      <tr>
+        <th scope="row">4. css 사용</th>
+        <td>css3</td>
+      </tr>
+      <tr>
+        <th scope="row">5. 크로스 브라우징</th>
+        <td>IE9</td>
+      </tr>
+      <tr>
+        <th scope="row">6. 웹 접근성</th>
+        <td>준수</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="status">
+    <h2 style="font-family: 'calbri'">Publish List</h2>
+    <span>○ 퍼블 대기중</span> <span>◐ 퍼블 작업중</span>
+    <span>● 퍼블 완료</span>
+  </div>
+  <table class="work">
+    <colgroup>
+      <col style="width: 10%" />
+      <col style="width: 12%" />
+      <col style="width: 12%" />
+      <col style="width: 12%" />
+      <col style="width: 12%" />
+      <col style="width: 18%" />
+      <col style="width: 50px" />
+      <col style="width: 50px" />
+      <col />
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">TYPE</th>
+        <th scope="col">1Dep</th>
+        <th scope="col">2Dep</th>
+        <th scope="col">3Dep</th>
+        <th scope="col">4Dep</th>
+        <th scope="col">FileName</th>
+        <th scope="col">ing</th>
+        <th scope="col">num</th>
+        <th scope="col">Memo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="tit">
+        <td>main</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="index.html" target="_blank">index.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr class="tit">
+        <td>main_en</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="index_en.html" target="_blank">index_en.html</a></td>
+        <td></td>
+        <td></td>
+        <td>영문 메인페이지 #wrapper에 en클래스 추가</td>
+      </tr>
+      <tr class="tit">
+        <td>서브공통</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="common.html" target="_blank">common.html</a></td>
+        <td></td>
+        <td></td>
+        <td>서브공통</td>
+      </tr>
+      <tr class="tit">
+        <td>서브공통2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="common2.html" target="_blank">common2.html</a></td>
+        <td></td>
+        <td></td>
+        <td>탭, 버튼, box</td>
+      </tr>
+      <tr class="tit">
+        <td rowspan="2">통합검색</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="K-002-001.html" target="_blank">K-002-001.html</a></td>
+        <td></td>
+        <td></td>
+        <td>통합검색 결과</td>
+      </tr>
+      <tr>
+        <td>통합검색 상세</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="K-002-002.html" target="_blank">K-002-002.html</a></td>
+        <td></td>
+        <td></td>
+        <td>통합검색 결과 더보기 화면</td>
+      </tr>
+      <tr class="tit">
+        <td rowspan="10">게시판</td>
+        <td>board_list1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="board_list.html" target="_blank">board_list.html</a></td>
+        <td></td>
+        <td></td>
+        <td>게시판 테이블 타입</td>
+      </tr>
+      <tr>
+        <td>board_list2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="board_list2.html" target="_blank">board_list2.html</a></td>
+        <td>◐</td>
+        <td></td>
+        <td>게시판 리스트 타입</td>
+      </tr>
+      <tr>
+        <td>board_list3</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="board_list3.html" target="_blank">board_list3.html</a></td>
+        <td></td>
+        <td></td>
+        <td>게시판 갤러리 타입</td>
+      </tr>
+      <tr>
+        <td>board_list4</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="board_list4.html" target="_blank">board_list4.html</a></td>
+        <td></td>
+        <td></td>
+        <td>갤러리타입 +@ (작성자, 카테고리, 정렬순서, 탭, 콤보박스)</td>
+      </tr>
+      <tr>
+        <td>board_list5</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="board_list5.html" target="_blank">board_list5.html</a></td>
+        <td></td>
+        <td></td>
+        <td>갤러리 타입(고정 썸네일), 다운로드,바로보기, 국제법동향과 실무</td>
+      </tr>
+      <tr>
+        <td>board_list6</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="board_list6.html" target="_blank">board_list6.html</a></td>
+        <td></td>
+        <td></td>
+        <td>뉴스레터</td>
+      </tr>
+      <tr>
+        <td>board_list_file</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="board_list_file.html" target="_blank">board_list_file.html</a></td>
+        <td></td>
+        <td></td>
+        <td>게시판 파일다운로드</td>
+      </tr>
+      <tr>
+        <td>faq</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="K-005-195.html" target="_blank">K-005-195.html</a></td>
+        <td></td>
+        <td></td>
+        <td>자주묻는질문</td>
+      </tr>
+      <tr>
+        <td>board_list7</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="board_list7.html" target="_blank">board_list7.html</a></td>
+        <td></td>
+        <td></td>
+        <td>리스트 타입</td>
+      </tr>
+      <tr>
+        <td>board_detail</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="board_detail.html" target="_blank">board_detail.html</a></td>
+        <td></td>
+        <td></td>
+        <td>게시판 상세페이지</td>
+      </tr>
+      <tr class="tit">
+        <td rowspan="200">서브페이지</td>
+        <td>영사·국가</td>
+        <td>여행·해외체류정보</td>
+        <td>영사관련민원안내</td>
+        <td></td>
+        <td><a href="K-003-004.html" target="_blank">K-003-004.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>영사관련이용방법</td>
+        <td></td>
+        <td><a href="K-003-005.html" target="_blank">K-003-005.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>영사관련서식</td>
+        <td></td>
+        <td><a href="K-003-006.html" target="_blank">K-003-006.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>재외국민등록</td>
+        <td></td>
+        <td><a href="K-003-012.html" target="_blank">K-003-012.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>재외동포 정의 및 현황</td>
+        <td>재외동포 정의 및 현황</td>
+        <td><a href="K-003-013.html" target="_blank">K-003-013.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>거주자격별 현황</td>
+        <td><a href="K-003-014.html" target="_blank">K-003-014.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>다수거주국가</td>
+        <td><a href="K-003-015.html" target="_blank">K-003-015.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>재외동포 정책</td>
+        <td>재외동포정책 개요</td>
+        <td><a href="K-003-016.html" target="_blank">K-003-016.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>재외동포정책 방향</td>
+        <td><a href="K-003-017.html" target="_blank">K-003-017.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>해외진출 우리국민 편익증진</td>
+        <td></td>
+        <td><a href="K-003-018.html" target="_blank">K-003-018.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>국가/지역 정보</td>
+        <td>국가/지역 검색</td>
+        <td></td>
+        <td><a href="K-004-001.html" target="_blank">K-004-001.html</a></td>
+        <td></td>
+        <td></td>
+        <td>개발</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>동북아시아</td>
+        <td></td>
+        <td><a href="K-004-002.html" target="_blank">K-004-002.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠+개발</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>대만</td>
+        <td><a href="K-004-003.html" target="_blank">K-004-003.html</a></td>
+        <td></td>
+        <td></td>
+        <td>개발</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>동남아시아</td>
+        <td></td>
+        <td><a href="K-004-008.html" target="_blank">K-004-008.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>서남아시아태평양</td>
+        <td></td>
+        <td><a href="K-004-020.html" target="_blank">K-004-020.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>남아시아태평양</td>
+        <td></td>
+        <td><a href="K-004-046.html" target="_blank">K-004-046.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>북미</td>
+        <td></td>
+        <td><a href="K-004-083.html" target="_blank">K-004-083.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>중남미</td>
+        <td></td>
+        <td><a href="K-004-087.html" target="_blank">K-004-087.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>러시아·중앙아시아</td>
+        <td></td>
+        <td><a href="K-004-122.html" target="_blank">K-004-122.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>유럽</td>
+        <td></td>
+        <td><a href="K-004-130.html" target="_blank">K-004-130.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>중동</td>
+        <td></td>
+        <td><a href="K-004-181.html" target="_blank">K-004-181.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>아프리카</td>
+        <td></td>
+        <td><a href="K-004-203.html" target="_blank">K-004-203.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr class="tit">
+        <td>외교정책</td>
+        <td>조약·국제법</td>
+        <td>조약·국제법</td>
+        <td></td>
+        <td><a href="K-005-001.html" target="_blank">K-005-001.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>조약개요</td>
+        <td>정의와유형(tab)</td>
+        <td><a href="K-005-002.html" target="_blank">K-005-002.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>조약의체결, 개정과종료(tab)</td>
+        <td><a href="K-005-003.html" target="_blank">K-005-003.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>조약체결현황</td>
+        <td>우리나라의조약체결활동(tab)</td>
+        <td><a href="K-005-004.html" target="_blank">K-005-004.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>조약체결을위한국내절차(tab)</td>
+        <td><a href="K-005-005.html" target="_blank">K-005-005.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>최근발효조약</td>
+        <td></td>
+        <td><a href="K-005-006.html" target="_blank">K-005-006.html</a></td>
+        <td></td>
+        <td></td>
+        <td>번호,제목,첨부,부서명,작성일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>국제법동향과실무</td>
+        <td></td>
+        <td><a href="K-005-010.html" target="_blank">K-005-010.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>국제법 소통</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>영토·해양이슈</td>
+        <td>독도(tab)</td>
+        <td><a href="K-005-014.html" target="_blank">K-005-014.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>고구려사왜곡(tab)</td>
+        <td><a href="K-005-015.html" target="_blank">K-005-015.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>동해명칭(tab)</td>
+        <td><a href="K-005-016.html" target="_blank">K-005-016.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>개발협력</td>
+        <td>개발협력</td>
+        <td></td>
+        <td><a href="K-005-017.html" target="_blank">K-005-017.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>개발협력정책 및 현황</td>
+        <td>정책소개(tab)</td>
+        <td><a href="K-005-018.html" target="_blank">K-005-018.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>ODA추진·지원(tab)</td>
+        <td><a href="K-005-019.html" target="_blank">K-005-019.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>국제기구·지역협력체</td>
+        <td>UN</td>
+        <td>개요(tab)</td>
+        <td><a href="K-005-024.html" target="_blank">K-005-024.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>관련자료</td>
+        <td><a href="K-005-025.html" target="_blank">K-005-025.html</a></td>
+        <td></td>
+        <td></td>
+        <td>번호, 구분, 제목, 첨부, 부서명, 작성일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>OECE</td>
+        <td>개요(tab)</td>
+        <td><a href="K-005-027.html" target="_blank">K-005-027.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>APEC</td>
+        <td>개요(tab)</td>
+        <td><a href="K-005-030.html" target="_blank">K-005-030.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>WTO</td>
+        <td></td>
+        <td><a href="K-005-037.html" target="_blank">K-005-037.html</a></td>
+        <td></td>
+        <td></td>
+        <td>개요 ,WTO 각료회의, 분쟁 통합 컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>협정문(tab)</td>
+        <td><a href="K-005-040.html" target="_blank">K-005-040.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>IAEA</td>
+        <td></td>
+        <td><a href="K-005-041.html" target="_blank">K-005-041.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>APEC</td>
+        <td>개요(tab)</td>
+        <td><a href="K-005-041.html" target="_blank">K-005-041.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>ARF</td>
+        <td>개요(tab)</td>
+        <td><a href="K-005-049.html" target="_blank">K-005-049.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>ACD</td>
+        <td>개요(tab)</td>
+        <td><a href="K-005-052.html" target="_blank">K-005-052.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>ASEAN + 3</td>
+        <td>개요(tab)</td>
+        <td><a href="K-005-055.html" target="_blank">K-005-055.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>ASEM</td>
+        <td>개요(tab)</td>
+        <td><a href="K-005-065.html" target="_blank">K-005-065.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>아시아유럽재단(ASEF)(tab)</td>
+        <td><a href="K-005-066.html" target="_blank">K-005-066.html</a></td>
+        <td></td>
+        <td></td>
+        <td>컨텐츠</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>중남미지역기구</td>
+        <td></td>
+        <td><a href="K-005-103.html" target="_blank">K-005-103.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>한-카리브 고위급 포럼</td>
+        <td>갤러리</td>
+        <td><a href="K-005-108.html" target="_blank">K-005-108.html</a></td>
+        <td></td>
+        <td></td>
+        <td>갤러리 게시판</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>안보</td>
+        <td>북한핵문제</td>
+        <td>주요문서</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>인권</td>
+        <td>인권자료</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-025.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>환경</td>
+        <td>기후변화·환경</td>
+        <td>활동현황</td>
+        <td><a href="K-005-153.html" target="_blank">K-005-153.html</a></td>
+        <td></td>
+        <td></td>
+        <td>번호, 제목, 부서명, 작성일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>남극</td>
+        <td>관련자료</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>북극</td>
+        <td>활동현황</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>경제</td>
+        <td>국제경제동향</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-025.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>경제협정</td>
+        <td>경제협정체결현황</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>해외입찰정보</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>박람회·전시회정보</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>해외취업지원</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>의전</td>
+        <td>해외순방·외빈방한</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-025.html 항목동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>주한공관</td>
+        <td></td>
+        <td><a href="K-005-191.html" target="_blank">K-005-191.html</a></td>
+        <td></td>
+        <td></td>
+        <td>첨부파일 다운로드</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>재미있는의전</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>자주묻는질문</td>
+        <td></td>
+        <td><a href="K-005-195.html" target="_blank">K-005-195.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>공공외교</td>
+        <td>우리의 공공외교 정책</td>
+        <td>주요 논문 및 보고서</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>공공외교 활동소식</td>
+        <td>주요 공공외교 소식</td>
+        <td><a href="K-005-204.html" target="_blank">K-005-204.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="tit">
+        <td>뉴스·공지</td>
+        <td>공지사항</td>
+        <td></td>
+        <td></td>
+        <td><a href="K-006-001.html" target="_blank">K-006-001.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>뉴포커스</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>외교일정</td>
+        <td>국제관계주요일정</td>
+        <td>주요일정</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="red"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>월간외교일지</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>문재인 대통령 정상외교</td>
+        <td></td>
+        <td><a href="K-006-013.html" target="_blank">K-006-013.html</a></td>
+        <td></td>
+        <td></td>
+        <td>이미지 + 리스트</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>외교부브리핑</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>채용정보</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>보도자료</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>연설</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>기고·인터뷰</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>해외언론에 비친 우리 외교</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>외교부소식지</td>
+        <td>뉴스레터</td>
+        <td></td>
+        <td><a href="K-006-035.html" target="_blank">K-006-035.html</a></td>
+        <td></td>
+        <td></td>
+        <td>썸네일 발행호와 텍스트 발행호 숫자 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>정책메일</td>
+        <td></td>
+        <td><a href="K-006-036.html" target="_blank">K-006-036.html</a></td>
+        <td></td>
+        <td></td>
+        <td>호수,제목,발행일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>자료실</td>
+        <td>외교백서</td>
+        <td>영문외교백서</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>한국외교60년</td>
+        <td></td>
+        <td><a href="K-006-040.html" target="_blank">K-006-040.html</a></td>
+        <td></td>
+        <td></td>
+        <td>첨부파일 다운로드</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>외교간행물</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>외교안보연구소발간자료</td>
+        <td></td>
+        <td><a href="K-006-043.html" target="_blank">K-006-043.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="tit">
+        <td>국민참여</td>
+        <td>대화의장</td>
+        <td>자유게시판</td>
+        <td></td>
+        <td><a href="K-007-002.html" target="_blank">K-007-002.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>정책토론 및 설문조사</td>
+        <td></td>
+        <td><a href="K-007-005.html" target="_blank">K-007-005.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>적극행정</td>
+        <td>적극행정 알림/소식</td>
+        <td>우수사례 | 우수공무원 | 자료실</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>칭찬합시다</td>
+        <td></td>
+        <td></td>
+        <td><a href="K-007-027.html" target="_blank">K-007-027.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>견학·방문</td>
+        <td>견학 공지사항</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr class="tit">
+        <td>정보공개</td>
+        <td>정보목록</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="red"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>사전정보공표</td>
+        <td>감사·평가/반부패 및 청렴/계약</td>
+        <td>감사·평가 | 반부패 및 청렴 | 계약</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>업무추진비</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>국회관련 정책자료</td>
+        <td>예산</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>정책실명제</td>
+        <td>정책실명제대상사업현황</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr class="tit">
+        <td>외교부 소개</td>
+        <td>연도별 업무계획</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>재외공관</td>
+        <td>재외공관정보</td>
+        <td></td>
+        <td><a href="K-009-013.html" target="_blank">K-009-013.html</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>주재관제도및선발</td>
+        <td>주재관모집공고</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>K-005-006.html 항목 동일</td>
+      </tr>
+      <tr class="tit yellow">
+        <td>About the Ministry</td>
+        <td>Minister</td>
+        <td>Former Ministers</td>
+        <td></td>
+        <td><a href="../en/E-003-002.html" target="_blank">E-003-002.html</a></td>
+        <td></td>
+        <td></td>
+        <td><a href="https://www.mofa.go.kr/eng/wpge/m_5740/contents.do">영문 페이지 보기</a></td>
+      </tr>
+      <tr class="yellow">
+        <td></td>
+        <td>Missions Overseas</td>
+        <td>Websites of Diplomatic Missions</td>
+        <td>Asia-Pacific(tap)</td>
+        <td><a href="../en/E-003-011.html" target="_blank">E-003-011.html</a></td>
+        <td></td>
+        <td></td>
+        <td><a href="https://www.mofa.go.kr/eng/wpge/m_5756/contents.do">영문 페이지 보기</a></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
